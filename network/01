@@ -1,0 +1,1 @@
+ifconfig -a | grep -e ': flags=' | awk '{print $1}' | sed 's/://'

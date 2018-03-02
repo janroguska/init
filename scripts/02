@@ -1,0 +1,4 @@
+sudo sh -c 'apt-get -qy update >> /var/log/update.log; apt-get -qy upgrade >> /var/log/update_script.log; apt-get -qy dist-upgrade >> /var/log/update_script.log' >> /etc/crontab
+
+# in command line: crontab -e, select option 1
+# on a new line in the file: '0 4 * * 0 /path/to/file'

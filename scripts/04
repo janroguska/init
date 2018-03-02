@@ -1,0 +1,16 @@
+file="/etc/crontab.backup"
+cron=$(md5sum /etc/crontab | cut -d' ' -f1)
+if [ -f "$file" ]
+	then
+		file=$(md5sum /etc/crontab.backup | cut -d ' ' -f1)
+	else
+		file=0
+	fi
+if [ "$file" != "$cron" ]
+	then
+	    mail -s "/etc/crontab has been modified" root@localhost.com
+	fi
+file=$(md5sum /etc/crontab | cut -d ' ' -f1 > /etc/crontab.backup)
+
+# in command line: crontab -e, select option 1
+# one a new line in the file: '0 0 * * 0-6 /path/to/file
