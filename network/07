@@ -1,1 +1,1 @@
-dig @8.8.8.8 +short NS slash16.org
+nslookup shlash16.org 8.8.8.8

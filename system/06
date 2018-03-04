@@ -1,1 +1,1 @@
-sudo reboot
+service ssh restart

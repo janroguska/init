@@ -1,1 +1,1 @@
-ifconfig -a | grep -A 6 -e 'en1' | grep ether | cut -d " " -f2
+networksetup -getmacaddress en1
