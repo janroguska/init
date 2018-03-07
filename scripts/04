@@ -5,13 +5,13 @@ cron=$(md5sum /etc/crontab | cut -d' ' -f1)
 if [ -f "$file" ]
 	then
 		file=$(cat /etc/crontab.backup)
-		if [ "$file" != "$cron" ]
-			then
-	    		echo "file modified" | mail -s "/etc/crontab has been modified" root
-			fi
-		else
-			file=0
-		fi
+	else
+		file="$cron"
+	fi
+	if [ "$file" != "$cron" ]
+	then
+	    echo "file modified" | mail -s "/etc/crontab has been modified" root
+	fi
 md5sum /etc/crontab | cut -d ' ' -f1 > /etc/crontab.backup
 
 # in command line: crontab -e, select option 1

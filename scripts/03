@@ -1,6 +1,1 @@
-#!/bin/bash
-
-for entry in "$1"
-do
-	ls -lS "$entry"
-done
+ls -lS $1

@@ -1,1 +1,1 @@
-ifconfig -a | grep -A 3 -e 'en0' | grep -e 'inet ' | awk '{print $2}'
+ifconfig -a | grep -A 4 -e 'en0'
